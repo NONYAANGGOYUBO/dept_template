@@ -1,7 +1,7 @@
 {{-- Container --}}
 <div class="max-w-[1280px] w-full flex flex-col md:flex-row p-1">
     {{-- about department box --}}
-    <div class="md:w-5/12 flex flex-col p-3">
+    <div class="md:w-1/3 flex flex-col p-3">
         <div class="pb-3">
             <h1 class="text-2xl font-semibold">About Department</h1>
         </div>
@@ -23,7 +23,7 @@
     </div>
 
     {{-- what's new, tenders box --}}
-    <div x-data="{ activeTab: 'WhatsNew'}" class="w-full md:w-4/12 flex flex-col p-3">
+    <div x-data="{ activeTab: 'WhatsNew'}" class="w-full md:w-1/3 flex flex-col p-3">
         <div id="mini_nav" class="flex flex-col md:flex-row">
             <div @click="activeTab = 'WhatsNew' " :class="{'bg-green-200 text-black': activeTab === 'WhatsNew', 'bg-gray-200 text-black': activeTab !== 'WhatsNew' }" class="p-2  md:w-1/3 text-center">What's New</div>
             <div @click="activeTab = 'Tenders' " :class="{'bg-green-200 text-black': activeTab === 'Tenders', 'bg-gray-200 text-black': activeTab !== 'Tenders' }" class="p-2 md:w-1/3 text-center">Tenders</div>
@@ -47,13 +47,13 @@
     </div>
 
     {{-- card of officers/ministers --}}
-    <div id="cards" class="md:w-3/12 p-3 block">
+    <div id="cards" class="md:w-1/3 p-3 block">
 
         {{-- individual card --}}
         <div id="individual_card" class="flex flex-col justify-center items-center md:flex-row border-collapse border p-0 ">
             <div id="left_card" class="flex justify-center items-center w-2/6 h-32">
                 <div id="pp_container">
-                    <img src="logos/user.png" class="h-24" alt="">
+                    <img src="logos/user.png" class="h-20" alt="">
                 </div>
             </div>
             <div id="right_card" class="flex flex-col w-4/6 p-2">
@@ -77,7 +77,7 @@
         <div id="individual_card" class="flex flex-col justify-center items-center md:flex-row border-collapse border p-0 mt-3">
             <div id="left_card" class="flex justify-center items-center w-2/6 h-32">
                 <div id="pp_container">
-                    <img src="logos/user.png" class="h-24" alt="">
+                    <img src="logos/user.png" class="h-20" alt="">
                 </div>
             </div>
             <div id="right_card" class="flex flex-col w-4/6 p-2">

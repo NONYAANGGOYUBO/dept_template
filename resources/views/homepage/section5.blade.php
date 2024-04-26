@@ -44,8 +44,8 @@
             </div>
         </div>
     </div>
-    <div class="w-full md:w-1/2 flex flex-col">
-        <div id="notice" class=" text-2xl font-semibold mb-2    ">Notice</div>
+    <div class="w-full md:w-1/2 flex flex-col p-3">
+        <div id="notice" class=" text-2xl font-semibold mb-2">Event Calender</div>
         <div id="notice_contents" class="h-56 p-3">
             <ul class="list-disc list-inside">
                 <li>Title of new scheme, service</li>
