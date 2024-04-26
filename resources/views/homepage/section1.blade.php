@@ -20,7 +20,7 @@
             {{-- will be used by admin --}}
             <img src="" alt="">
         </div>
-        <div>
+        <div class="hidden sm:block">
             <img src="logos/digitalindia.png" alt="">
         </div>
     </div>

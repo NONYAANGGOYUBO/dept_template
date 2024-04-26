@@ -24,7 +24,7 @@
 
 
     {{--navbar section 2 --}}
-    <section class="flex justify-center w-full h-[44px] border-b border-collapse">
+    <section class="flex justify-center w-full h-auto border-b border-collapse">
       @include('homepage.section2')
     </section>
 
