@@ -19,7 +19,7 @@
                 <a class="px-5 py-3" href="">DOCUMENTS</a>
             </li>
             <li class="flex items-center justify-center hover:text-white hover:bg-orange-700 ease-in-out duration-200">
-                <a class="px-5 py-3" href="">OTHER</a>
+                <a class="px-5 py-3" href="{{route('cal')}}">OTHER</a>
             </li>
         </ul>
     </nav>

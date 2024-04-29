@@ -5,6 +5,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/cal', function () {
+    return view('calendar');
+})->name('cal');
 
 Route::middleware([
     'auth:sanctum',
