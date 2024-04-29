@@ -22,7 +22,6 @@
                 <a class="px-5 py-3" href="">OTHER</a>
             </li>
         </ul>
-
     </nav>
 
 </div>

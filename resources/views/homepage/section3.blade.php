@@ -11,19 +11,19 @@
             <i class="fa-solid fa-arrow-right"></i>
         </div>
     </div> --}}
-    <div class="container m-0 min-w-full h-auto overflow-hidden relative"> {{--container--}}
+    <div class="cont min-w-full h-auto overflow-hidden relative"> {{--container--}}
         <div class="slides flex h-auto w-full">{{--slides--}}
             <div class="slide min-w-full h-auto">{{--slide--}}
-                <img src="gallery/img1.png" class="w-full h-auto" alt="">{{--container--}}
+                <img src="gallery/img1.png" class="min-w-full h-auto" alt="">{{--container--}}
             </div>
             <div class="slide min-w-full h-auto">{{--slide--}}
-                <img src="gallery/img2.png" class="w-full h-auto" alt="">{{--container--}}
+                <img src="gallery/img5.png" class="min-w-full h-auto" alt="">{{--container--}}
             </div>
             <div class="slide min-w-full h-auto">{{--slide--}}
-                <img src="gallery/img3.png" class="w-full h-auto" alt="">{{--container--}}
+                <img src="gallery/img6.png" class="min-w-full h-auto" alt="">{{--container--}}
             </div>
             <div class="slide min-w-full h-auto">{{--slide--}}
-                <img src="gallery/img4.jpg" class="w-full h-auto" alt="">{{--container--}}{{--container--}}
+                <img src="gallery/img2.png" class="min-w-full h-auto" alt="">{{--container--}}{{--container--}}
             </div>
         </div>
         <div class="slide-controls absolute top-[50%] left-0 -translate-y-[50%] w-[100%] flex justify-between items-center px-3">{{--sli-control--}}
@@ -37,7 +37,7 @@
 
 
  <script>
-    const slideContainer = document.querySelector('.container');
+    const slideContainer = document.querySelector('.cont');
     const slide = document.querySelector('.slides');
     const nextBtn = document.getElementById('next-btn');
     const prevBtn = document.getElementById('prev-btn');
@@ -56,12 +56,13 @@
     slide.append(firstClone);
     slide.prepend(lastClone);
 
-    const slideWidth = window.innerWidth;
-    console.log(slideWidth);
+    const slideWidth = slide.clientWidth;
 
-    slide.style.transform = `translateX(${-slideWidth * index}px)`;
 
-    console.log(slides);
+    slide.style.transform = `translateX(${-slideWidth}px)`;
+
+
+
 
     const startSlide = () => {
     slideId = setInterval(() => {
@@ -88,8 +89,7 @@
 
     const moveToNextSlide = () => {
         const slideWidth = window.innerWidth;
-        console.log(slideWidth);
-        console.log(slides);
+
         slides = getSlides();
         if (index >= slides.length - 1) return;
         index++;
