@@ -8,6 +8,42 @@
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <title>Department of Education</title>
+    <style>
+        .calendar ul li{
+            width: calc(100%/7);
+            position: relative;
+        }
+        .calendar .days li{
+            cursor: pointer;
+            margin-top: 30px;
+            z-index: 1;
+        }
+        .calendar .days li::before{
+            position: absolute;
+            content: "";
+            height: 40px;
+            width: 40px;
+            top: 50%;
+            left: 50%;
+            z-index: -1;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+        }
+        .days li:hover::before{
+            background: #f2f2f2;
+            z-index: -1;
+        }
+        .days li.inactive{
+            color: #aaa;
+        }
+        .days li.active{
+            color: #fff;
+        }
+        .days  li.active::before{
+            background: rgb(0, 66, 146);
+
+        }
+    </style>
     {{-- <style>
         body:::-webkit-scrollbar{
             display: none;
