@@ -47,7 +47,7 @@
 <body class="flex items-center justify-center min-h-screen bg-blue-900">
     <div class="wrapper w-[450px] bg-[#fff] rounded-lg">
         <header class="flex items-center justify-between p-4">
-            <p class="current-date text-[1.45rem] font-[500]">August 2024</p>
+            <p class="current-date text-[1.45rem] font-[500]"></p>  {{--current-date class--}}
             <div class="icons flex gap-2">
                 <span class="w-[38px] h-[38px] hover:bg-slate-300 cursor-pointer flex items-center justify-center bg-slate-100 rounded-full"><i class="fa-solid fa-chevron-left"></i></span>
                 <span class="w-[38px] h-[38px] hover:bg-slate-300 cursor-pointer flex items-center justify-center bg-slate-100 rounded-full"><i class="fa-solid fa-chevron-right"></i></span>
@@ -64,45 +64,36 @@
                 <li>Sat</li>
             </ul>
             <ul class="days flex flex-wrap text-center mb-[20px]">
-                <li class="inactive">28</li>
-                <li class="inactive">29</li>
-                <li class="inactive">30</li>
-                <li class="inactive">31</li>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-                <li>4</li>
-                <li>5</li>
-                <li>6</li>
-                <li>7</li>
-                <li>8</li>
-                <li>9</li>
-                <li>10</li>
-                <li>11</li>
-                <li>12</li>
-                <li class="active">13</li>
-                <li>14</li>
-                <li>15</li>
-                <li>16</li>
-                <li>17</li>
-                <li>18</li>
-                <li>19</li>
-                <li>20</li>
-                <li>21</li>
-                <li>22</li>
-                <li>23</li>
-                <li>24</li>
-                <li>25</li>
-                <li>26</li>
-                <li>27</li>
-                <li>28</li>
-                <li>29</li>
-                <li>30</li>
-                <li class="inactive">1</li>
+
             </ul>
         </div>
     </div>
     <script>
+        const currentDate = document.querySelector(".current-date"),
+        daysTag = document.querySelector(".days");
+
+        let date = new Date(), //getting exact time date
+        currYear = date.getFullYear(), // getting year
+        currMonth = date.getMonth();
+
+        console.log(currYear);
+
+        const months = ["January", "February", "March", "April", "May", "June", "July",
+                        "August", "September", "October", "November", "December"];
+
+        const renderCalender = () => {
+            let lastDateOfMonth = new Date(currYear, currMonth + 1, 0).getDate(); //getting the last date method , to get first +1 should removed and last attribute should be 1
+            let liTag = "";
+            for (let i = 1; i <= lastDateOfMonth; i++) {
+                liTag += `<li>${i}</li>`;
+            }
+
+            currentDate.innerText = `${months[currMonth]} ${currYear}`;
+            daysTag.innerHTML = liTag;
+
+        }
+        renderCalender();
+
 
     </script>
 </body>
