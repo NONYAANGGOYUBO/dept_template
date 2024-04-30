@@ -4,3 +4,41 @@ composer.phar
 # Commit your application's lock file https://getcomposer.org/doc/01-basic-usage.md#commit-your-composer-lock-file-to-version-control
 # You may choose to ignore a library lock file http://getcomposer.org/doc/02-libraries.md#lock-file
 # composer.lock
+node_modules/.bin/autoprefixer.cmd
+node_modules/.bin/autoprefixer.ps1
+node_modules/.bin/browserslist.cmd
+node_modules/.bin/browserslist.ps1
+node_modules/.bin/clean-orphaned-assets.cmd
+node_modules/.bin/clean-orphaned-assets.ps1
+node_modules/.bin/cssesc.cmd
+node_modules/.bin/cssesc.ps1
+node_modules/.bin/esbuild.cmd
+node_modules/.bin/esbuild.ps1
+node_modules/.bin/glob.cmd
+node_modules/.bin/glob.ps1
+node_modules/.bin/jiti.cmd
+node_modules/.bin/jiti.ps1
+node_modules/.bin/mini-svg-data-uri.cmd
+node_modules/.bin/mini-svg-data-uri.ps1
+node_modules/.bin/nanoid.cmd
+node_modules/.bin/nanoid.ps1
+node_modules/.bin/node-which.cmd
+node_modules/.bin/node-which.ps1
+node_modules/.bin/resolve.cmd
+node_modules/.bin/resolve.ps1
+node_modules/.bin/rollup.cmd
+node_modules/.bin/rollup.ps1
+node_modules/.bin/sucrase-node.cmd
+node_modules/.bin/sucrase.cmd
+node_modules/.bin/sucrase-node.ps1
+node_modules/.bin/sucrase.ps1
+node_modules/.bin/tailwind.cmd
+node_modules/.bin/tailwind.ps1
+node_modules/.bin/tailwindcss.cmd
+node_modules/.bin/tailwindcss.ps1
+node_modules/.bin/update-browserslist-db.cmd
+node_modules/.bin/update-browserslist-db.ps1
+node_modules/.bin/vite.cmd
+node_modules/.bin/vite.ps1
+node_modules/.bin/yaml.cmd
+node_modules/.bin/yaml.ps1
