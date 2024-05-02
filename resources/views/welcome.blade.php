@@ -40,7 +40,7 @@
             color: #fff;
         }
         .days  li.active::before{
-            background: rgb(0, 66, 146);
+            background: rgb(14, 116, 144);
 
         }
 
@@ -102,12 +102,12 @@
     </section>
 
     {{-- glance section 6 --}}
-    <section class="flex justify-center w-full mt-4 bg-slate-50">
+    <section class="flex justify-center w-full mt-4 ">
         @include('homepage.section6')
     </section>
 
     {{-- gallery and calender section 7 --}}
-    <section class="flex justify-center w-full mt-4 ">
+    <section class="flex justify-center w-full mt-4 bg-cyan-700">
         @include('homepage.section7')
     </section>
 

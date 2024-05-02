@@ -65,7 +65,7 @@
             </div>
         </div>
         <div class="hover:scale-110 ease-in-out duration-300 w-fit">
-            <a href="" class="bg-yellow-200 font-bold text-yellow-700  p-2 rounded-md text-sm">{{--read more link--}}
+            <a href="" class="bg-cyan-200 font-bold text-cyan-700  p-2 rounded-md text-sm">{{--read more link--}}
                 View all
             </a>
         </div>
@@ -165,7 +165,7 @@
 
         </div>
         <div class="hover:scale-110 ease-in-out duration-300 w-fit">
-            <a href="" class="bg-yellow-200 font-bold text-yellow-700  p-2 rounded-md text-sm">{{--read more link--}}
+            <a href="" class="bg-cyan-200 font-bold text-cyan-700  p-2 rounded-md text-sm">{{--read more link--}}
                 View all
             </a>
         </div>

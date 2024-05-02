@@ -15,7 +15,7 @@
                 Porro ut illum sequi, omnis quidem debitis blanditiis! Deleniti veniam amet natus unde provident quibusdam delectus qui. Provident voluptas culpa earum, minus saepe adipisci, similique, hic maxime temporibus dolorum voluptatem.
             </p>
             <div class="hover:scale-110 ease-in-out duration-300 w-fit">
-                <a href="" class="bg-yellow-200 font-bold text-yellow-700  p-2 rounded-md text-sm">{{--read more link--}}
+                <a href="" class="bg-cyan-200 font-bold text-cyan-700  p-2 rounded-md text-sm">{{--read more link--}}
                     Read more
                 </a>
             </div>
@@ -81,11 +81,11 @@
                     <p>Chief Minister Name</p>
                 </div>
                 <div class="flex">
-                    <div class="w-1/2">
+                    <div class="w-1/2 text-cyan-700">
                         <i class="fa-solid fa-phone pr-1"></i>
                         <a href="" class="text-xs">Contact</a>
                     </div>
-                    <div class="w-1/2">
+                    <div class="w-1/2 text-cyan-700">
                         <i class="fa-solid fa-address-card pr-1"></i>
                         <a href="" class="text-xs">Profile</a>
                     </div>
@@ -105,11 +105,11 @@
                     <p>Chief Minister Name</p>
                 </div>
                 <div class="flex">
-                    <div class="w-1/2">
+                    <div class="w-1/2 text-cyan-700">
                         <i class="fa-solid fa-phone pr-1"></i>
                         <a href="" class="text-xs">Contact</a>
                     </div>
-                    <div class="w-1/2">
+                    <div class="w-1/2 text-cyan-700">
                         <i class="fa-solid fa-address-card pr-1"></i>
                         <a href="" class="text-xs">Profile</a>
                     </div>
