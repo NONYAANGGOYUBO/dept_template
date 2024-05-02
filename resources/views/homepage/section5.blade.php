@@ -64,13 +64,15 @@
                 </div>
             </div>
         </div>
-        <div class="bg-yellow-400 text-black hover:text-white p-2 w-fit rounded-md mt-2 text-sm">
-            View all
+        <div class="hover:scale-110 ease-in-out duration-300 w-fit">
+            <a href="" class="bg-yellow-200 font-bold text-yellow-700  p-2 rounded-md text-sm">{{--read more link--}}
+                View all
+            </a>
         </div>
     </div>
     <div class="w-full md:w-1/2 flex flex-col p-3">
         <div id="notice" class=" text-2xl font-semibold mb-2">Event Calender</div>
-        <div id="notice_contents" class="p-3 flex justify-center items-center">
+        <div id="notice_contents" class="p-3 flex justify-center items-center bg-slate-50 rounded-md mb-2">
             <div class="wrapper w-[450px] bg-[#fff] rounded-lg">
                 <header class="flex items-center justify-between p-4">
                     <p class="current-date text-[1.45rem] font-[500]"></p>  {{--current-date class--}}
@@ -162,8 +164,10 @@
             </script>
 
         </div>
-        <div class="bg-yellow-400 text-black hover:text-white p-2 w-fit rounded-md mt-2 text-sm">
-            View all
+        <div class="hover:scale-110 ease-in-out duration-300 w-fit">
+            <a href="" class="bg-yellow-200 font-bold text-yellow-700  p-2 rounded-md text-sm">{{--read more link--}}
+                View all
+            </a>
         </div>
 
     </div>

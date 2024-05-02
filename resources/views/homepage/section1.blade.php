@@ -6,7 +6,7 @@
             <img class="h-[100px] p-2" src="logos/pngegg.png" height="100" alt="">
         </div>
         <div class="text-black block">
-            <p class="font-medium">Department of XYZ</p>
+            <p class="font-medium">Department of Education</p>
             <p class=" font-bold text-2xl">Government of Arunachal</p>
         </div>
     </div>
