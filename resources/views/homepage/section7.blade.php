@@ -20,6 +20,7 @@
             </a>
         </div>
     </div>
+    {{-- map --}}
     <div class="w-full md:w-1/2 flex flex-col">
         <div id="" class="text-lg font-semibold text-center text-white">Office Location Guide</div>
         <div id="content_for_calender" class="w-full h-full ">
@@ -39,7 +40,7 @@
         var latlng = [27.091231, 93.621733];
         // layers
         var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright"></a> '
         });
         var popupContent = '<p>Hello world!<br />This is a nice popup.</p>';
 
