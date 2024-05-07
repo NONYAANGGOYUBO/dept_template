@@ -42,3 +42,4 @@ node_modules/.bin/vite.cmd
 node_modules/.bin/vite.ps1
 node_modules/.bin/yaml.cmd
 node_modules/.bin/yaml.ps1
+public/hot
