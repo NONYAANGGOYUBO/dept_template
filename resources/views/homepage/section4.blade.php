@@ -7,12 +7,7 @@
         </div>
         <div class="h-full">
             <p class="overflow-hidden h-[165px] text-justify mb-4">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti omnis rem accusantium quo delectus perferendis nostrum excepturi architecto qui? Rem perferendis, perspiciatis ex reiciendis dolores provident cumque eveniet modi eos?
-                Obcaecati libero magni delectus nemo esse ipsam quam quia a. Temporibus facere, modi voluptatem maxime nisi sequi ea! Quaerat praesentium labore perspiciatis, dolorem beatae sapiente eius consectetur. Natus, beatae nemo.
-                Nemo rerum facere iure, quidem laborum officiis omnis excepturi optio quas libero pariatur! Repellendus quis deleniti officia fuga ducimus qui esse, ea velit ut error voluptate harum, autem repellat nesciunt.
-                Facilis, tempore optio voluptate voluptates nisi quibusdam sunt accusantium quasi porro maiores dolorum corporis placeat velit laborum consectetur qui dolores odit perferendis ex explicabo delectus earum? Consequuntur quibusdam consequatur aut.
-                Provident cumque aspernatur quod hic tempora facere dolorem debitis deleniti veniam! Minima, nostrum porro. Commodi blanditiis sapiente, in tempora veniam excepturi unde minima! Esse unde optio aspernatur possimus quo aut.
-                Porro ut illum sequi, omnis quidem debitis blanditiis! Deleniti veniam amet natus unde provident quibusdam delectus qui. Provident voluptas culpa earum, minus saepe adipisci, similique, hic maxime temporibus dolorum voluptatem.
+                {{$about}}
             </p>
             <div class="hover:scale-110 ease-in-out duration-300 w-fit">
                 <a href="" class="bg-cyan-200 font-bold text-cyan-700  p-2 rounded-md text-sm">{{--read more link--}}
