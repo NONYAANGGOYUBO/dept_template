@@ -9,7 +9,13 @@ class main_page extends Controller
 {
     public function show(){
         $about = About::where('id','=',1)->first();
-        $about = $about->about;
+        if($about===null){
+            $about = 'Empty';
+        }
+        else{
+            $about = $about->about;
+        }
+
         return view('welcome',[
             'about' => $about,
         ]);

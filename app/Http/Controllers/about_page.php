@@ -12,18 +12,35 @@ class about_page extends Controller
         $validated = request()->validate([
             'about' => 'required|min:2'
         ]);
-        $about->update($validated);
-        return redirect()->route('dashboard');
+        if($about === null){
+            About::create($validated);
+            return redirect()->route('dashboard');
+        }
+        else{
+            $about->update($validated);
+            return redirect()->route('dashboard');
+        }
+
+
 
 
     }
 
     public function show(){
         $about = About::where('id','=',1)->first();
-        $about = $about->about;
-        return view('dashboard',[
+        if($about === null){
+            $about = 'Empty';
+            return view('dashboard',[
+                'about' => $about,
+            ]);
+        }
+        else{
+            $about = $about->about;
+            return view('dashboard',[
             'about' => $about,
         ]);
+        }
+
     }
 
 

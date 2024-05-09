@@ -29,7 +29,11 @@ export default {
                     '0%' :{transform: 'translateX(100%)'},
                     '100%' :{transform: 'translateX(0%)'},
                 }
-            }
+            },
+            boxShadow: {
+                '3xl':'0 15px 50px 15px #a0abab',
+            },
+
         },
     },
 
