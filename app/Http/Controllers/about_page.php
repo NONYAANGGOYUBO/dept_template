@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class about_page extends Controller
 {
-    public function editabout(){
+    public function editabout(){   //edit button function
         $about = About::where('id','=',1)->first();
         $validated = request()->validate([
             'about' => 'required|min:2'
@@ -26,17 +26,17 @@ class about_page extends Controller
 
     }
 
-    public function show(){
+    public function show(){     //this renders dashboard to page
         $about = About::where('id','=',1)->first();
         if($about === null){
             $about = 'Empty';
-            return view('dashboard',[
+            return view('navigationtab.dashboard',[
                 'about' => $about,
             ]);
         }
         else{
             $about = $about->about;
-            return view('dashboard',[
+            return view('navigationtab.dashboard',[
             'about' => $about,
         ]);
         }

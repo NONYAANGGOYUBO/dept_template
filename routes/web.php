@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\about_page;
 use App\Http\Controllers\main_page;
+use App\Livewire\DeptAbout;
+use App\Models\About;
 use Illuminate\Support\Facades\Route;
 
 
@@ -17,8 +19,11 @@ Route::middleware([
     'verified',
 ])->group(function () {
 
-    Route::get('/dashboard',[about_page::class,'show'])->name('dashboard');
-    Route::post('/editabout',[about_page::class,'editabout'])->name('editabout');
+    // Route::get('/dashboard',[about_page::class,'show'])->name('dashboard');
+    // Route::post('/editabout',[about_page::class,'editabout'])->name('editabout');
+    Route::get('/dashboard',[DeptAbout::class,'show'])->name('dashboard');
+    // Route::post('/editabout',[LivewireTest::class,'editabout'])->name('editabout');
+
 
     Route::get('/media', function () {
         return view('navigationtab.media');

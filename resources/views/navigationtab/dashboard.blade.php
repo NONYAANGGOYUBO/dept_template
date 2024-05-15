@@ -10,7 +10,8 @@
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
 
                 {{-- <x-welcome /> --}}
-                @include('components.welcome')
+                {{-- @include('components.welcome') --}}
+                @livewire('dept-about')
             </div>
         </div>
     </div>
