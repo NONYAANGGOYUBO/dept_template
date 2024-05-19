@@ -13,7 +13,15 @@ return new class extends Migration
     {
         Schema::create('abouts', function (Blueprint $table) {
             $table->id();
+            $table->string('deptname')->nullable();
             $table->longText('about')->nullable();
+            $table->string('street')->nullable();
+            $table->string('city')->nullable();
+            $table->string('state')->nullable();
+            $table->string('district')->nullable();
+            $table->integer('pincode')->nullable();
+            $table -> decimal('lat',18,15)->nullable();
+            $table -> decimal('lng',18,15)->nullable();
             $table->timestamps();
         });
     }

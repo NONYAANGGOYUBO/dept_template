@@ -9,7 +9,15 @@ class About extends Model
 {
     use HasFactory;
     protected $fillable = [
+        'deptname',
         'about',
+        'street',
+        'city',
+        'state',
+        'district',
+        'pincode',
+        'lat',
+        'lng',
 
     ];
 }

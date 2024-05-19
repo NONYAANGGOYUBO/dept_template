@@ -20,9 +20,10 @@ Route::middleware([
 ])->group(function () {
 
     // Route::get('/dashboard',[about_page::class,'show'])->name('dashboard');
-    // Route::post('/editabout',[about_page::class,'editabout'])->name('editabout');
+
     Route::get('/dashboard',[DeptAbout::class,'show'])->name('dashboard');
-    // Route::post('/editabout',[LivewireTest::class,'editabout'])->name('editabout');
+    Route::get('/showeditabout',[DeptAbout::class,'showeditabout'])->name('showeditabout');
+    Route::post('/editaddress',[DeptAbout::class,'editaddress'])->name('editaddress');
 
 
     Route::get('/media', function () {
