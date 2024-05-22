@@ -68,6 +68,7 @@ class DeptAbout extends Component
             'state' => 'required',
             'city' => 'required',
             'pincode' => 'required|max:6',
+            'district'=>'required',
             'lat' => 'nullable',
             'lng' => 'nullable',
         ]);

@@ -6,15 +6,11 @@
             <h1 class="text-2xl font-semibold">About Department</h1>
         </div>
         <div class="h-full">
-            @if ($about===null)
+
             <p class="overflow-hidden h-[165px] text-justify mb-4">
-                Empty
+                {{$dbaddress==null?'no data is available':($dbaddress->about==null?'no data':$dbaddress->about)}}
             </p>
-            @else
-            <p class="overflow-hidden h-[165px] text-justify mb-4">
-                {{$about}}
-            </p>
-            @endif
+
 
             <div class="hover:scale-110 ease-in-out duration-300 w-fit">
                 <a href="" class="bg-cyan-200 font-bold text-cyan-700  p-2 rounded-md text-sm">{{--read more link--}}

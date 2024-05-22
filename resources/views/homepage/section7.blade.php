@@ -29,35 +29,33 @@
             </div>
             <div class="p-3  text-md font-semibold mt-2 bg-white rounded-lg">
                 <p class="text-cyan-700">Address:</p>
-                <p class="text-sm">Office of Directorate of Elementary & Secondary Education, ESS Sector, Itanagar, PIN: 791111 (Near Higher Secondary School Itanagar)</p>
+                <p class="text-sm">{{$dbaddress->deptname}}, {{$dbaddress->street}}, {{$dbaddress->city}}, {{$dbaddress->district}}, {{$dbaddress->pincode}}, {{$dbaddress->state}}</p>
             </div>
         </div>
     </div>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <script>
         var coordinates;
-        var map = L.map('map').setView([27.091231, 93.621733], 15);
-        var latlng = [27.091231, 93.621733];
+        var map = L.map('map').setView([
+            {{$dbaddress==null?28.2180:($dbaddress->lat==null?28.2180:$dbaddress->lat)}},
+            {{$dbaddress==null?94.7278:($dbaddress->lng==null?94.7278:$dbaddress->lng)}}
+        ],{{$dbaddress==null?8:($dbaddress->lat==null||$dbaddress->lng==null?8:15)}});
+
         // layers
         var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright"></a> '
         });
         var popupContent = '<p>Hello world!<br />This is a nice popup.</p>';
 
-        var myMarker = L.marker([27.091231, 93.621733]);
+        var myMarker = L.marker([
+            {{$dbaddress==null?28.2180:($dbaddress->lat==null?28.2180:$dbaddress->lat)}},
+            {{$dbaddress==null?94.7278:($dbaddress->lng==null?94.7278:$dbaddress->lng)}}
+        ]);
         // myMarker.addTo(map) will add the marker
         myMarker.bindPopup(popupContent);
         myMarker.addTo(map);
 
 
-        // map.on('click',function(e) {
-        //     myMarker.setLatLng(e.latlng)
-
-        //     document.getElementById('latitude').value = e.latlng.lat;
-        //     document.getElementById('longitude').value = e.latlng.lng;
-        // });
-
-        // myMarker.addTo(map);
         osm.addTo(map);
     </script>
 </div>

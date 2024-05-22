@@ -14,7 +14,7 @@
 
             @endif
 
-        <div">
+        <div>
             <form action="{{route('editaddress')}}" class="w-full bg-white p-5 rounded-lg " method="POST">
                 @csrf
                 <div class="grid lg:grid-cols-2 grid-cols-1 pb-5">

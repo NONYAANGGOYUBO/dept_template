@@ -49,7 +49,7 @@
         </div>
         <hr class="my-4">
         <div>
-{{-- address section --}}
+        {{-- address section --}}
             <div class=" bg-gray-50 h-full">
                 <div class="flex justify-between py-3 h-24 items-center">
                     <div>
@@ -176,6 +176,82 @@
 
 
 
+        </div>
+        <hr class="my-4">
+        {{-- head of department section --}}
+        <div>
+            <div>
+                <p class="text-gray-800 font-bold text-xl">Head of Department</p>
+                <p class="py-2 text-gray-400">Update your head of Ministry and head of Department</p>
+                <div x-data="{showMessage: false}" x-init="window.addEventListener('flashMessage', () => { showMessage = true; setTimeout(() => { showMessage = false; }, 3000); })">
+                    @if (session('success'))
+
+                        <div x-show="showMessage" class="p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400" role="alert">
+                            <span class="font-medium">{{session('success')}}</span>
+                        </div>
+
+                    @endif
+                </div>
+
+                <div class="w-full rounded-lg">
+                    <div class="grid lg:grid-cols-2 grid-cols-1 pb-5 gap-4">
+                        {{-- left card --}}
+                        <div x-data = "{cardleft:false}" class="flex flex-col border border-slate-200 rounded-md bg-white p-6 gap-4">
+                            <div class="flex justify-center items-center h-36 w-full object-cover relative">
+                                <img src="gallery/event2.jpg" class="rounded-full h-36 w-36"  alt="">
+                                <button wire.prevent class="absolute right-0 top-0 rounded-full">
+                                    <i @click = 'cardleft = true' class="fa-solid fa-pen-to-square bg-green-400/50
+                                             hover:scale-110 ease-in-out duration-300
+                                             text-green-800 p-2 rounded-full cursor-pointer">
+                                    </i>
+                                </button>
+                            </div>
+                            <div class="flex flex-col items-center">
+
+                                <h2 class="font-bold text-2xl">Donald Trump</h2>
+                                <p class="text-lg font-semibold text-gray-500">Chief Minister</p>
+
+                            </div>
+                            <div class="flex justify-evenly">
+                                <p class="text-xs"><i class="fa-solid fa-phone rounded-full text-blue-800 bg-blue-400/50 p-2 mr-1"></i> +9190000001111</p>
+                                <p class="text-xs"><i class="fa-solid fa-envelope rounded-full text-white bg-red-500 p-2 mr-1"></i>admin@test.test</p>
+                                <p class="text-xs"><i class="fa-brands fa-x-twitter rounded-full text-white bg-black p-2 mr-1"></i>admin@test.test</p>
+
+                            </div>
+                            <div x-show="cardleft" class="p-16 bg-gray-100 fixed top-0 left-0 bottom-0 z-10 bg-slate-500/5 flex items-center justify-center w-full">
+                                <div class="w-full md:w-[80%] bg-white p-5 rounded-lg shadow-3xl" @click.outside = "cardleft = false">
+                                    <h1 class="text-center font-semibold text-xl p-2">Edit About Department</h1>
+                                </div>
+                            </div>
+                        </div>
+                        {{-- right card --}}
+                        <div class="flex flex-col border border-slate-200 rounded-md bg-white p-6 gap-4">
+                            <div class="flex justify-center items-center h-36 w-full object-cover relative">
+                                <img src="gallery/event2.jpg" class="rounded-full h-36 w-36"  alt="">
+                                <div class="absolute right-0 top-0">
+                                    <i class="fa-solid fa-pen-to-square bg-green-400/50
+                                             hover:scale-110 ease-in-out duration-300
+                                             text-green-800 p-2 rounded-full cursor-pointer">
+
+                                    </i>
+                                </div>
+                            </div>
+                            <div class="flex flex-col items-center">
+
+                                <h2 class="font-bold text-2xl">Donald Trump</h2>
+                                <p class="text-lg font-semibold text-gray-500">Chief Minister</p>
+
+                            </div>
+                            <div class="flex justify-evenly">
+                                <p class="text-xs"><i class="fa-solid fa-phone rounded-full text-blue-800 bg-blue-400/50 p-2 mr-1"></i> +9190000001111</p>
+                                <p class="text-xs"><i class="fa-solid fa-envelope rounded-full text-white bg-red-500 p-2 mr-1"></i>admin@test.test</p>
+                                <p class="text-xs"><i class="fa-brands fa-x-twitter rounded-full text-white bg-black p-2 mr-1"></i>admin@test.test</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 

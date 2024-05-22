@@ -1,5 +1,5 @@
-<div class="h-16 w-full bg-cyan-700 flex items-center">
-    <div class="flex text-white p-3 w-full">
+<div class="h-10 w-full bg-cyan-700 flex items-center">
+    <div class="flex text-white p-4 w-full">
         <p class="text-xl w-1/5">Latest News</p>
         <div class="overflow-hidden w-4/5 relative">
             <div id="marquee" class="marquee animate-marquee whitespace-nowrap flex w-full">

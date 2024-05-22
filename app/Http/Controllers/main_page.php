@@ -8,16 +8,10 @@ use Illuminate\Http\Request;
 class main_page extends Controller
 {
     public function show(){
-        $about = About::where('id','=',1)->first();
-        if($about===null){
-            $about = 'Empty';
-        }
-        else{
-            $about = $about->about;
-        }
+        $dbaddress = About::where('id','=',1)->first();
 
         return view('welcome',[
-            'about' => $about,
+            'dbaddress' => $dbaddress,
         ]);
     }
 }
