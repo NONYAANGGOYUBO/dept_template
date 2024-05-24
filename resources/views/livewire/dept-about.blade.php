@@ -197,8 +197,25 @@
                     <div class="grid lg:grid-cols-2 grid-cols-1 pb-5 gap-4">
                         {{-- left card --}}
                         <div x-data = "{cardleft:false}" class="flex flex-col border border-slate-200 rounded-md bg-white p-6 gap-4">
-                            <div class="flex justify-center items-center h-36 w-full object-cover relative">
-                                <img src="gallery/event2.jpg" class="rounded-full h-36 w-36"  alt="">
+                            <div class="flex justify-left gap-3 h-full w-full object-cover relative">
+                                @if ($card1===null)
+                                    <img src="logos/user.png" class="rounded-lg h-36 w-36"  alt="">
+                                @else
+                                    <img src="/storage/{{$card1->profile_image}}" class="rounded-lg h-36 w-36 object-cover "  alt="">
+                                @endif
+
+                                <div class="flex flex-col justify-start">
+
+                                    <h2 class="font-bold text-2xl">{{$card1===null?'Xyz abc':$card1->name}}</h2>
+                                    <p class="text-lg font-semibold text-gray-500">{{$card1===null?'Post name':$card1->postname}}</p>
+                                    <div class="flex flex-col mt-2 gap-3">
+                                        <p class="text-xs"><i class="fa-solid fa-phone rounded-full text-blue-800 bg-blue-400/50 p-2 mr-1"></i>{{$card1===null?'1122334455':$card1->phone}}</p>
+                                        <p class="text-xs"><i class="fa-solid fa-envelope rounded-full text-white bg-red-500 p-2 mr-1"></i>{{$card1===null?'admin@test.test':$card1->email}}</p>
+
+
+                                    </div>
+                                </div>
+
                                 <button wire.prevent class="absolute right-0 top-0 rounded-full">
                                     <i @click = 'cardleft = true' class="fa-solid fa-pen-to-square bg-green-400/50
                                              hover:scale-110 ease-in-out duration-300
@@ -206,21 +223,108 @@
                                     </i>
                                 </button>
                             </div>
-                            <div class="flex flex-col items-center">
+                            <p class="text-xs"><i class="fa-brands fa-x-twitter rounded-full text-white bg-black p-2 mr-1"></i>{{$card1===null?'admin@test.test':$card1->twitter}}</p>
 
-                                <h2 class="font-bold text-2xl">Donald Trump</h2>
-                                <p class="text-lg font-semibold text-gray-500">Chief Minister</p>
-
-                            </div>
-                            <div class="flex justify-evenly">
-                                <p class="text-xs"><i class="fa-solid fa-phone rounded-full text-blue-800 bg-blue-400/50 p-2 mr-1"></i> +9190000001111</p>
-                                <p class="text-xs"><i class="fa-solid fa-envelope rounded-full text-white bg-red-500 p-2 mr-1"></i>admin@test.test</p>
-                                <p class="text-xs"><i class="fa-brands fa-x-twitter rounded-full text-white bg-black p-2 mr-1"></i>admin@test.test</p>
-
-                            </div>
-                            <div x-show="cardleft" class="p-16 bg-gray-100 fixed top-0 left-0 bottom-0 z-10 bg-slate-500/5 flex items-center justify-center w-full">
+                            <div x-show="cardleft" class="p-16 bg-gray-100 fixed top-0 left-0 bottom-0 z-50 bg-slate-500/5 flex items-center justify-center w-full">
                                 <div class="w-full md:w-[80%] bg-white p-5 rounded-lg shadow-3xl" @click.outside = "cardleft = false">
-                                    <h1 class="text-center font-semibold text-xl p-2">Edit About Department</h1>
+                                    <h1 class="text-center font-semibold text-xl p-2 mb-4">Edit Card 1</h1>
+                                    <div x-data="{showMessage: false}" x-init="window.addEventListener('flashMessage', () => { showMessage = true; setTimeout(() => { showMessage = false; }, 3000); })">
+                                        @if (session('success_card'))
+
+                                            <div x-show="showMessage" class="p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400" role="alert">
+                                                <span class="font-medium">{{session('success_card')}}</span>
+                                            </div>
+
+                                        @endif
+                                    </div>
+                                    <form class=" bg-white border border-gray-300 rounded-md p-3" wire:submit="editminister">
+
+                                        {{-- image file --}}
+                                        <div class="relative flex justify-center">
+                                            <div class="flex p-3 justify-center absolute -top-10">
+                                                <div class=" flex h-32 w-32 justify-center rounded-full items-center bg-slate-100 relative shadow-lg ">
+                                                    <div class="h-28 w-28 flex justify-center overflow-hidden rounded-full items-center relative">
+                                                        @if ($card1===null)
+                                                            <img src="logos/user.png" class="h-28 w-28 object-cover"  alt="">
+                                                        @else
+                                                            <img src="/storage/{{$card1->profile_image}}" class=" w-28 object-cover" alt="">
+                                                        @endif
+
+                                                    </div>
+
+                                                    <input type="file" name="profile_image" wire:model="minister.profile_image" id="profile_image" accept="image/*" class="hidden ">
+                                                    <label for="profile_image" class="cursor-pointer absolute  -bottom-4 flex items-center justify-center w-8 h-8 bg-white rounded-full shadow-lg hover:bg-gray-300">
+                                                        <i class="fa-solid fa-pen text-xs text-gray-500"></i>
+                                                    </label>
+                                                    @if ($minister->profile_image)
+                                                    <div class="absolute z-10">
+                                                        <img src="{{$minister->profile_image->temporaryUrl()}}" class="h-28 w-28 object-cover rounded-full" alt="">
+                                                    </div>
+
+                                                @endif
+
+                                                </div>
+                                                @error('minister.profile_image')
+                                                    <span class="text-red-500 text-sm">{{$message}}</span>
+                                                @enderror
+                                            </div>
+                                        </div>
+
+                                        <div class="grid lg:grid-cols-2 grid-cols-1 pb-5 mt-32 border-t border-gray-300">
+                                            <div class="flex flex-col p-3">
+                                                <label for="fname" class="text-sm mt-5 mb-2 font-bold">Full Name</label>
+                                                <input value="" type="text" name="name" wire:model="minister.name" placeholder="Enter full name" class="border border-gray-300 rounded-md p-2 text-sm">
+                                                @error('minister.name')
+                                                    <span class="text-red-500 text-sm">{{$message}}</span>
+                                                @enderror
+                                            </div>
+
+                                            <div class="flex flex-col p-3">
+                                                <label for="postname" class="text-sm mt-5 mb-2 font-bold">Post Name</label>
+                                                <input value="" type="text" name="postname" wire:model="minister.postname" placeholder="Enter Designation" class="border border-gray-300 rounded-md p-2 text-sm">
+                                                @error('minister.postname')
+                                                    <span class="text-red-500 text-sm">{{$message}}</span>
+                                                @enderror
+                                            </div>
+
+                                            <div class="flex flex-col p-3">
+                                                <label for="email" class="text-sm mt-5 mb-2 font-bold">Email</label>
+                                                <input value="" type="email" wire:model="minister.email" placeholder="example@gmail.com" class="border border-gray-300 rounded-md p-2 text-sm">
+                                                @error('minister.email')
+                                                    <span class="text-red-500 text-sm">{{$message}}</span>
+                                                @enderror
+                                            </div>
+
+                                            <div class="flex flex-col p-3">
+                                                <label for="phone" class="text-sm mt-5 mb-2 font-bold">Phone No.</label>
+                                                <input value="" type="tel" name="phone" wire:model="minister.phone" maxlength="10" minlength="10"  placeholder="Enter Phone number" class="border border-gray-300 rounded-md p-2 text-sm">
+                                                @error('minister.phone')
+                                                    <span class="text-red-500 text-sm">{{$message}}</span>
+                                                @enderror
+                                            </div>
+
+                                            <div class="flex flex-col p-3">
+                                                <label for="twitter" class="text-sm mt-5 mb-2 font-bold">Twitter link</label>
+                                                <input value="" type="url" name="twitter" wire:model="minister.twitter"  placeholder="Enter twitter link" class="border border-gray-300 rounded-md p-2 text-sm">
+                                                @error('minister.twitter')
+                                                    <span class="text-red-500 text-sm">{{$message}}</span>
+                                                @enderror
+                                            </div>
+
+
+                                        </div>
+                                        <hr>
+                                        <div class="p-3 pb-5">
+
+                                        <button class=" inline-flex items-center px-4 py-2 bg-blue-600 border border-transparent
+                                        rounded-md font-semibold text-xs text-white uppercase tracking-widest
+                                         hover:bg-blue-800 focus:bg-gray-700">save</button>
+                                        <div @click = "cardleft = false" class=" inline-flex items-center px-4 py-2
+                                            rounded-md font-bold text-xs text-black uppercase tracking-widest border
+                                        hover:shadow-xl hover:text-red-500 cursor-pointer">cancel</div>
+                                        </div>
+
+                                    </form>
                                 </div>
                             </div>
                         </div>

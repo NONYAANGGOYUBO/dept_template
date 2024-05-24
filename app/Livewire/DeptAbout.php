@@ -2,30 +2,36 @@
 
 namespace App\Livewire;
 
-use App\Livewire\Forms\address;
+
+use App\Livewire\Forms\minister;
 use App\Models\About;
+use App\Models\Headofminister;
 use Illuminate\Http\Request;
 use Livewire\Attributes\Rule;
 use Livewire\Component;
+use Livewire\WithFileUploads;
 
 class DeptAbout extends Component
 {
+    use WithFileUploads;
 
     #[Rule('required|min:2')]
     public $about;
 
-    public address $address;
+    public minister $minister;
 
     public function render()
     {
         $dbabout = About::where('id','=',1)->first();
         $dbaddress = About::where('id','=',1)->first();
+        $card1 = Headofminister::where('id','=',1)->first();
         if($dbabout === null){
             $dbabout = "No data availale";
 
             return view('livewire.dept-about',[
                 'dbabout' => $dbabout,
                 'dbaddress' => $dbaddress,
+                'card1' => $card1,
             ]);
         }
         else{
@@ -36,6 +42,7 @@ class DeptAbout extends Component
             return view('livewire.dept-about',[
             'dbabout' => $this->about,
             'dbaddress' => $dbaddress,
+            'card1' => $card1,
         ]);
         }
 
@@ -105,6 +112,34 @@ class DeptAbout extends Component
         return view('navigationtab.dashboardaddress.editaddress',[
             'dbaddress' => $dbaddress
         ]);
+    }
+
+
+
+    public function editminister(){
+        $validated = $this->minister->validate();
+
+        if($this->minister->profile_image){
+            $validated['profile_image'] = $this->minister->profile_image->store('card1','public');
+        }
+
+
+        $card1 = Headofminister::where('id','=',1)->first();
+
+        if($card1 === null){
+
+            Headofminister::create($validated);
+            session()->flash('success_card', 'Head of department is added successfully');
+            $this->dispatch('flashMessage');
+        }
+        else{
+
+            $card1->update($validated);
+            session()->flash('success_card', 'Head of department is added successfully');
+            $this->dispatch('flashMessage');
+
+        }
+
     }
 
 
